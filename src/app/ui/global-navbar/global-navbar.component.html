@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-light bg-nav navbar-custom">
+    <button (click)="isCollapse = !isCollapse" class="navbar-toggler navbar-toggler-right" type="button">
+        <span class="navbar-toggler-icon"></span> 
+    </button>
+
+    <div class="navbar-collapse" [ngClass]="{'collapse': isCollapse, 'navbar-collapse': true}" id="navbarContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/maps" routerLinkActive="active"
+                (click)="isCollapse = true">Maps</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/moments" routerLinkActive="active"
+                (click)="isCollapse = true">Moments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/notifications" routerLinkActive="active"
+                (click)="isCollapse = true">Notifications</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/messages" routerLinkActive="active"
+                (click)="isCollapse = true">Messages</a>
+            </li> 
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active"
+                (click)="isCollapse = true">
+                    <div class="avator"></div>
+                </a>
+            </li>
+        </ul>
+    </div> 
+</nav>

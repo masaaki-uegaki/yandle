@@ -1,0 +1,11 @@
+{
+    "short_name": "Yandle",
+    "name": "Yandle",
+    "start_url": "/",
+
+    "theme_color": "#f48c5b",
+    "background_color": "#ffffff",
+
+    "display": "standalone",
+    "orientation": "portrait"
+}
