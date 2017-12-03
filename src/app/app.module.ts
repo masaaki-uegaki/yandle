@@ -21,6 +21,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireAuthModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     // NgbModule.forRoot(),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCjzPouajQEKc2cuM0DZoTIbElhpe6mQ-I'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],
