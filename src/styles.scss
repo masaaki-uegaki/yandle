@@ -1,6 +1,44 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
+html {
+    height: 100%;    
+}
 body {
     font-family: 'Lato', sans-serif;
+    height: 100%;
+}
+
+$screen-xs: 575px !default; // Extra small devices (portrait phones, less than 576px)
+$screen-sm: 767px !default; // Small devices (landscape phones, less than 768px)
+$screen-md: 991px !default; // Medium devices (tablets, less than 992px)
+$screen-lg: 1199px !default; // Large devices (desktops, less than 1200px)
+$screen-xl: 1200px !default; // Extra large devices (large desktops, 1200px and up)
+
+@mixin mq($DEVICE) {
+    @if $DEVICE == "xs" {
+        @media (max-width: ($screen-xs)) {
+            @content;
+        }
+    }
+    @else if $DEVICE == "sm" {
+        @media (min-width: ($screen-xs + 1)) and (max-width: ($screen-sm)) {
+            @content;
+        }
+    }
+    @else if $DEVICE == "md" {
+        @media (min-width: ($screen-sm + 1)) and (max-width: ($screen-md)) {
+            @content;
+        }
+    }
+    @else if $DEVICE == "lg" {
+        @media (min-width: ($screen-md + 1)) and (max-width: ($screen-lg)) {
+            @content;
+        }
+    }
+    @else if $DEVICE == "xl" {
+        @media (min-width: ($screen-lg + 1)) {
+            @content;
+        }
+    }
 }

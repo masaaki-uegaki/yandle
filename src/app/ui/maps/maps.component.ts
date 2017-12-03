@@ -9,7 +9,6 @@ export class MapsComponent implements OnInit {
   lat: number = 35.839404;
   lng: number = 137.202668;
   scrollwheel: boolean = true;
-  fullscreenControl: boolean = true;
   zoom = 11;
 
   constructor() { }

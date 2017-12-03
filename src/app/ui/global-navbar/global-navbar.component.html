@@ -18,11 +18,17 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/graphs" routerLinkActive="active"
+                    (click)="isCollapse = true" mdbRippleRadius>
+                    <div class="active">Graphs</div>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-item nav-link" routerLink="/notifications" routerLinkActive="active"
                     (click)="isCollapse = true" mdbRippleRadius>
                     <div class="active">Notifications</div>
                 </a>
-            </li> 
+            </li>
             <li class="nav-item">
                 <a class="nav-item nav-link" routerLink="/messages" routerLinkActive="active"
                     (click)="isCollapse = true" mdbRippleRadius>
