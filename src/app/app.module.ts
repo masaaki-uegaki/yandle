@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { ReactiveFormsModule }   from '@angular/forms';
@@ -39,7 +39,6 @@ import { AgmCoreModule } from '@agm/core';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
-    // NgbModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCjzPouajQEKc2cuM0DZoTIbElhpe6mQ-I'
