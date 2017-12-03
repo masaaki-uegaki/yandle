@@ -1,3 +1,5 @@
+import { registerLocaleData } from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -22,6 +24,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AgmCoreModule } from '@agm/core';
+
+import localeJa from '@angular/common/locales/ja';
+registerLocaleData(localeJa);
 
 @NgModule({
   declarations: [

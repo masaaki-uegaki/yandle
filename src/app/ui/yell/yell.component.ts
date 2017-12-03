@@ -22,9 +22,7 @@ export class YellComponent implements OnInit {
 
     ngOnInit() {
         this.yellForm = new FormGroup({
-            'message': new FormControl(this.yell.message, [
-              Validators.required
-            ]),
+            'message': new FormControl(this.yell.message, [Validators.required]),
         });
     }
 

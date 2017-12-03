@@ -1,7 +1,7 @@
 <form [formGroup]="yellForm" #formDir="ngForm">
     <div class="form-group">
-      <textarea class="form-control" rows="2" id="yell" placeholder="Write your yell !!" required
-          formControlName="message"></textarea>
+      <textarea class="form-control" rows="2" id="yell"
+          formControlName="message" placeholder="いまの気持ち！" i18n-placeholder></textarea>
     </div>
-    <button type="submit" class="btn btn-danger float-right" [disabled]="yellForm.invalid">Yell</button>
+    <button type="submit" class="btn btn-danger float-right" [disabled]="yellForm.invalid" i18n>イェール</button>
 </form>
