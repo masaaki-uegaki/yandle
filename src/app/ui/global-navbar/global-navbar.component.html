@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-nav navbar-custom">
+<nav class="navbar navbar-expand-md navbar-light bg-nav">
     <button (click)="isCollapse = !isCollapse" class="navbar-toggler navbar-toggler-right" type="button">
         <span class="navbar-toggler-icon"></span> 
     </button>
@@ -7,19 +7,19 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-item nav-link" routerLink="/maps" routerLinkActive="active"
-                (click)="isCollapse = true">Maps</a>
+                (click)="isCollapse = true"><div class="active">Maps</div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-item nav-link" routerLink="/moments" routerLinkActive="active"
-                (click)="isCollapse = true">Moments</a>
+                (click)="isCollapse = true"><div class="active">Moments</div></a>
             </li>
             <li class="nav-item">
                 <a class="nav-item nav-link" routerLink="/notifications" routerLinkActive="active"
-                (click)="isCollapse = true">Notifications</a>
+                (click)="isCollapse = true"><div class="active">Notifications</div></a>
             </li> 
             <li class="nav-item">
                 <a class="nav-item nav-link" routerLink="/messages" routerLinkActive="active"
-                (click)="isCollapse = true">Messages</a>
+                (click)="isCollapse = true"><div class="active">Messages</div></a>
             </li> 
         </ul>
         <ul class="nav navbar-nav">
