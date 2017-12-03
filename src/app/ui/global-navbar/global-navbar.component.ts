@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GlobalNavbarComponent implements OnInit {
+  isCollapse: boolean = false;
+
   constructor() {}
 
   ngOnInit() {
