@@ -7,15 +7,15 @@ import { YellService } from '../../service/yell/yell.service';
 import { MomentsRoutingModule }　from './moments-routing.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MomentsRoutingModule
-  ],
-  declarations: [
-    MomentsComponent,
-  ],
-  providers: [
-    YellService
-  ],
+    imports: [
+      CommonModule,
+      MomentsRoutingModule
+    ],
+    declarations: [
+      MomentsComponent,
+    ],
+    providers: [
+      YellService
+    ],
 })
 export class MomentsModule {}

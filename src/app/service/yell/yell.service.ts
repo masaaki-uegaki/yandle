@@ -2,24 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Yell } from '../../model/yell';
 
 @Injectable()
 export class YellService {
 
-  constructor(private db: AngularFireDatabase) { }
+    constructor(private db: AngularFireDatabase) { }
 
-  getMoments(feed): Observable<any[]> {
-    const ref = this.db.list<number>(`/v0/${feed}`);
-    return ref.valueChanges();
-  }
+    getMoments(): Observable<Yell[]> {
+        return this.db.list<Yell>('/yells').valueChanges();
+    }
 
-  getItem(itemId):  Observable<any> {
-    const ref = this.db.object(`/v0/item/${itemId}`);
-    return ref.valueChanges();
-  }
-
-  getUser(userId): Observable<any> {
-    const ref = this.db.object(`/v0/user/${userId}`);
-    return ref.valueChanges();
-  }
+    addYell(yell: Yell) {
+        this.db.list<Yell>('/yells').push(yell);
+    }
 }
