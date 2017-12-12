@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MapService } from '../../service/map/map.service';
+import { Location } from '../../model/location';
 
 @Component({
   selector: 'app-maps',
@@ -11,23 +13,14 @@ export class MapsComponent implements OnInit {
   scrollwheel: boolean = true;
   zoom = 11;
 
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
   ngOnInit() {
-      this.setCurrentPlace();
-  }
-
-  setCurrentPlace() {
-      if (!navigator.geolocation) {
-          return;
-      }
-      navigator.geolocation.getCurrentPosition(
-          (position) => {
-              this.lat = position.coords.latitude;
-              this.lng = position.coords.longitude;
-          },
-          (error) => {
-          }
-      );
+     this.mapService.getCurrentLocation(
+        (location: Location) => {
+            this.lat = location.getLat();
+            this.lng = location.getLng();
+        }
+    );
   }
 }

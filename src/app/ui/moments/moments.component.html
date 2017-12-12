@@ -1,3 +1,9 @@
 <p i18n>
   イェールが表示される予定！  
 </p>
+
+
+<div *ngFor="let yell of yells | async">
+      <h3><a href="#">{{yell.userId}}</a> </h3>
+      <p>{{yell.message}}</p>
+</div>
