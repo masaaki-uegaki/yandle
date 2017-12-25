@@ -18,14 +18,12 @@ import { Observable } from 'rxjs/Observable';
 export class YellComponent implements OnInit {
     yell: Yell = {
         id: 0,
-        userId: 0,
-        userName: 'Anonymous',
+        userId: '',
+        userName: '',
         message: '',
         location: null,
-        createdAt: null,
+        createdAt: '',
     };
-
-    location: Location;
 
     yellForm: FormGroup;
 
@@ -65,6 +63,8 @@ export class YellComponent implements OnInit {
 
     //TODO
     setYellMock() {
+        this.yell.id = 0;
+        this.yell.userId = 'anonymous';
         this.yell.userName = '匿名さん';
     }
 
