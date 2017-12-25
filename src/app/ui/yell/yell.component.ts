@@ -7,7 +7,6 @@ import { MapService } from '../../service/map/map.service';
 import { Location } from '../../model/location';
 
 import * as moment from 'moment'; 
-import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'yell',
