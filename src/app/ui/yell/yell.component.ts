@@ -43,7 +43,8 @@ export class YellComponent implements OnInit {
 
     onSubmit() {
         this.setYell();
-        this.yellService.addYell(this.yell)
+        this.yellService.addYell(this.yell);
+        this.yellForm.reset();
     }
 
     setYell() {
