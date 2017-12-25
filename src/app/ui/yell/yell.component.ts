@@ -37,30 +37,29 @@ export class YellComponent implements OnInit {
         this.yellForm = new FormGroup({
             'message': new FormControl(this.yell.message, [Validators.required]),
         });
+
+        this.setCurrentLocation();
     }
 
     onSubmit() {
-        this.setYell().subscribe(
-            () => this.yellService.addYell(this.yell)
-        );
+        this.setYell();
+        this.yellService.addYell(this.yell)
     }
 
-    setYell(): Observable<any> {
+    setYell() {
         this.setYellMock();
 
         this.yell.message = this.message.value;
         this.yell.createdAt = this.timestamp;
 
-        return Observable.create(observer => {
-            this.mapService.getCurrentLocation()
-                .subscribe(
-                    (location: Location) => {
-                        this.yell.location = location;
-                        observer.next();
-                    },
-                    error => observer.error()
-                );
-        });
+        this.setCurrentLocation();
+    }
+
+    setCurrentLocation() {
+        this.mapService.getCurrentLocation()
+            .subscribe(
+                (location: Location) => this.yell.location = location,
+            );
     }
 
     //TODO
