@@ -3,6 +3,7 @@
         <div class="card-body">
             <a class="card-link" routerLink="/profile/{{yell.userId}}">{{yell.userName}}</a>
             <p class="card-text">{{yell.message}}</p>
+            <a class="card-link" routerLink="/maps" queryParams="{lat: 0, lng: 0}"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
             <p class="card-text">{{yell.createdAt | timestamp}}</p>
         </div>
     </div>
