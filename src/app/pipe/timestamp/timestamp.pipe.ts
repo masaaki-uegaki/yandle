@@ -7,7 +7,9 @@ import * as moment from 'moment';
 export class TimestampPipe implements PipeTransform {
 
     transform(timestamp: string): string {
-        moment.locale("ja");
-        return moment(new Date(timestamp)).format('YYYY-MM-DD HH:mm:ss');
+        //TODO
+        // moment.locale("ja");
+        // return moment(new Date(timestamp)).format('YYYY-MM-DD HH:mm:ss');
+        return timestamp;
     }
 }
