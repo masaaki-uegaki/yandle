@@ -15,7 +15,6 @@ export class MapsComponent implements OnInit {
     zoom = 11;
 
     constructor(
-      private router: Router,
       private route: ActivatedRoute,
       private mapService: MapService) {
       }
