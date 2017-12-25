@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MapService } from '../../service/map/map.service';
 import { Location } from '../../model/location';
 import { Router, ActivatedRoute } from '@angular/router';
-import _ from "lodash";
 
 @Component({
     selector: 'app-maps',
