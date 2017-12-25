@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import * as moment from 'moment'; 
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Yell } from '../../model/yell';
@@ -14,6 +15,7 @@ export class YellService {
     }
 
     addYell(yell: Yell) {
+        yell.createdAt = moment(yell.createdAt).format('YYYY-MM-DD HH:mm:ss')
         this.db.list<Yell>('/yells').push(yell);
     }
 }

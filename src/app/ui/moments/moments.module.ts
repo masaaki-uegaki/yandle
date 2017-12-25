@@ -3,6 +3,7 @@ import { CommonModule }   from '@angular/common';
 
 import { MomentsComponent } from './moments.component';
 import { YellService } from '../../service/yell/yell.service';
+import { TimestampPipe } from '../../pipe/timestamp/timestamp.pipe';
 
 import { MomentsRoutingModule }　from './moments-routing.module';
 
@@ -13,6 +14,7 @@ import { MomentsRoutingModule }　from './moments-routing.module';
     ],
     declarations: [
       MomentsComponent,
+      TimestampPipe,
     ],
     providers: [
       YellService

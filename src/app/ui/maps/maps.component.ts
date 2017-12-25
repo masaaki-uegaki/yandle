@@ -16,11 +16,10 @@ export class MapsComponent implements OnInit {
   constructor(private mapService: MapService) { }
 
   ngOnInit() {
-     this.mapService.getCurrentLocation(
-        (location: Location) => {
-            this.lat = location.getLat();
-            this.lng = location.getLng();
-        }
-    );
+     this.mapService.getCurrentLocation()
+        .subscribe((location: Location) => {
+            this.lat = location.lat;
+            this.lng = location.lng;
+        });
   }
 }

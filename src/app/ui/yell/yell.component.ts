@@ -6,6 +6,9 @@ import { Yell } from '../../model/yell';
 import { MapService } from '../../service/map/map.service';
 import { Location } from '../../model/location';
 
+import * as moment from 'moment'; 
+import { Observable } from 'rxjs/Observable';
+
 @Component({
     selector: 'yell',
     templateUrl: 'yell.component.html',
@@ -16,34 +19,60 @@ export class YellComponent implements OnInit {
     yell: Yell = {
         id: 0,
         userId: 0,
+        userName: 'Anonymous',
         message: '',
-        location: null
+        location: null,
+        createdAt: null,
     };
 
     location: Location;
 
     yellForm: FormGroup;
 
-    constructor(private yellService: YellService,
-                private mapService: MapService) {}
+    constructor(
+        private yellService: YellService,
+        private mapService: MapService) {}
 
     ngOnInit() {
         this.yellForm = new FormGroup({
             'message': new FormControl(this.yell.message, [Validators.required]),
         });
-        this.mapService.getCurrentLocation(
-            (location: Location) => {
-                this.yell.location = location;
-            }
-        );
     }
 
     onSubmit() {
+        this.setYell().subscribe(
+            () => this.yellService.addYell(this.yell)
+        );
+    }
+
+    setYell(): Observable<any> {
+        this.setYellMock();
+
         this.yell.message = this.message.value;
-        this.yellService.addYell(this.yell);
+        this.yell.createdAt = this.timestamp;
+
+        return Observable.create(observer => {
+            this.mapService.getCurrentLocation()
+                .subscribe(
+                    (location: Location) => {
+                        this.yell.location = location;
+                        observer.next();
+                    },
+                    error => observer.error()
+                );
+        });
+    }
+
+    //TODO
+    setYellMock() {
+        this.yell.userName = '匿名さん';
     }
 
     get message(): AbstractControl {
         return this.yellForm.get('message');
+    }
+
+    get timestamp() {
+        return moment();
     }
 }

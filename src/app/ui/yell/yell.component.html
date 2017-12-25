@@ -1,7 +1,9 @@
 <form [formGroup]="yellForm" #formDir="ngForm" (ngSubmit)="onSubmit()" novalidate>
-    <div class="form-group">
-      <textarea class="form-control" rows="2" id="yell"
-          formControlName="message" placeholder="いまの気持ち！" i18n-placeholder></textarea>
+    <div class="clearfix">
+        <div class="form-group">
+        <textarea class="form-control" rows="2" id="yell"
+            formControlName="message" placeholder="いまの気持ち！" i18n-placeholder></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger float-right" [disabled]="yellForm.invalid" i18n>イェール</button>
     </div>
-    <button type="submit" class="btn btn-danger float-right" [disabled]="yellForm.invalid" i18n>イェール</button>
 </form>

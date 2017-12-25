@@ -1,9 +1,9 @@
-<p i18n>
-  イェールが表示される予定！  
-</p>
-
-
 <div *ngFor="let yell of yells | async">
-      <h3><a href="#">{{yell.userId}}</a> </h3>
-      <p>{{yell.message}}</p>
+    <div class="card">
+        <div class="card-body">
+            <a class="card-link" routerLink="/profile/{{yell.userId}}">{{yell.userName}}</a>
+            <p class="card-text">{{yell.message}}</p>
+            <p class="card-text">{{yell.createdAt | timestamp}}</p>
+        </div>
+    </div>
 </div>

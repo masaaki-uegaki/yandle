@@ -16,19 +16,21 @@ export class MapService {
 
     constructor() { }
 
-    getCurrentLocation(callback: Function, errCallback?: Function): Location {
-        if (!navigator.geolocation) {
-            return errCallback(null);
-        }
-
-        let location: Location = new Location(0, 0);
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                callback(new Location(position.coords.latitude, position.coords.longitude));
-            },
-            (error) => {
-                return errCallback(error);
+    getCurrentLocation(): Observable<Location> {
+        return Observable.create(observer => {
+            if (!navigator.geolocation) {
+                return observer.error();
             }
-        );
+
+            let location: Location = {lat: 0, lng: 0};
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    observer.next({lat: position.coords.latitude, lng: position.coords.longitude});
+                },
+                (error) => {
+                    return observer.error(error);
+                }
+            );
+        });
     }
 }

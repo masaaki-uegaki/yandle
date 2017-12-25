@@ -1,15 +1,11 @@
 import { Location } from './location';
+import { Moment } from 'moment';
 
-export class Yell {
+export interface Yell {
     id: number;
     userId: number;
+    userName: string;
     message: string;
     location: Location;
-    
-    constructor(id: number, userId: number, message: string, location: Location) {
-        this.id = id;
-        this.userId = userId;
-        this.message = message;
-        this.location = location;
-    }
+    createdAt: string | Moment;
 }
