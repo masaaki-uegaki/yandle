@@ -4,7 +4,7 @@ import * as moment from 'moment';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Yell } from '../../model/yell';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 @Injectable()
 export class YellService {
 
