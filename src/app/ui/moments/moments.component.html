@@ -2,7 +2,7 @@
     <div class="card mb-3">
         <div class="card-body">
             <a class="card-link" routerLink="/profile/{{yell.userId}}">{{yell.userName}}</a>
-            <div class="yell-message card-text ">{{yell.message}}</div>
+            <div class="yell-message card-text mt-1 mb-1">{{yell.message}}</div>
             <a class="card-link" [routerLink]="['/maps']" [queryParams]="{lat: yell.location.lat, lng: yell.location.lng}"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
             <div class="card-text">{{yell.createdAt | timestamp}}</div>
         </div>
