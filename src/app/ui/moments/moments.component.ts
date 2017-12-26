@@ -7,7 +7,7 @@ import { Yell } from '../../model/yell';
 @Component({
   selector: 'app-moments',
   templateUrl: 'moments.component.html',
-  styles: []
+  styleUrls: ['./moments.component.scss']
 })
 export class MomentsComponent implements OnInit {
     yells: Observable<Yell[]>;
