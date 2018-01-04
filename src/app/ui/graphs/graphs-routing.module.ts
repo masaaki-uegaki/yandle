@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {GraphsComponent} from './graphs.component';
+import { GraphsComponent } from './graphs.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          {path: 'messages', component: GraphsComponent},
+          { path: 'messages', component: GraphsComponent },
         ]
       }
     ]
@@ -26,4 +26,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class GraphsRoutingModule {}
+export class GraphsRoutingModule { }

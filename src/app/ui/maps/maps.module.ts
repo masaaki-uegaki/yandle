@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {AgmCoreModule} from '@agm/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
-import {MapsComponent} from './maps.component';
-import {MapService} from '../../service/map/map.service';
+import { MapsComponent } from './maps.component';
+import { MapService } from '../../service/map/map.service';
 
-import {MapsRoutingModule} from './maps-routing.module';
+import { MapsRoutingModule } from './maps-routing.module';
 
 @NgModule({
   imports: [
@@ -20,4 +20,4 @@ import {MapsRoutingModule} from './maps-routing.module';
     MapService
   ]
 })
-export class MapsModule {}
+export class MapsModule { }

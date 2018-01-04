@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {YellComponent} from './yell.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {YellService} from '../../service/yell/yell.service';
-import {MapService} from '../../service/map/map.service';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { YellComponent } from './yell.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { YellService } from '../../service/yell/yell.service';
+import { MapService } from '../../service/map/map.service';
 
 @NgModule({
   imports: [RouterModule, CommonModule, ReactiveFormsModule],
@@ -15,4 +15,4 @@ import {MapService} from '../../service/map/map.service';
     MapService,
   ],
 })
-export class YellModule {}
+export class YellModule { }

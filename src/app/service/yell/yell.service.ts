@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import * as moment from 'moment';
 
-import {AngularFirestore} from 'angularfire2/firestore';
+import { AngularFirestore } from 'angularfire2/firestore';
 
-import {Yell} from '../../model/yell';
+import { Yell } from '../../model/yell';
 
 @Injectable()
 export class YellService {

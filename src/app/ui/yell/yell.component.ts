@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
-import {YellService} from '../../service/yell/yell.service';
-import {Yell} from '../../model/yell';
-import {MapService} from '../../service/map/map.service';
-import {Location} from '../../model/location';
+import { YellService } from '../../service/yell/yell.service';
+import { Yell } from '../../model/yell';
+import { MapService } from '../../service/map/map.service';
+import { Location } from '../../model/location';
 
 import * as moment from 'moment';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'yell',
@@ -29,7 +29,7 @@ export class YellComponent implements OnInit {
 
     constructor(
         private yellService: YellService,
-        private mapService: MapService) {}
+        private mapService: MapService) { }
 
     ngOnInit() {
         this.yellForm = new FormGroup({

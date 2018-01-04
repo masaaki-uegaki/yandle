@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'global-navbar',
@@ -9,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 export class GlobalNavbarComponent implements OnInit {
   isCollapse: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
   }

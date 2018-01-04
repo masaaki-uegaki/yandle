@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-graphs',
@@ -9,7 +9,7 @@ export class GraphsComponent implements OnInit {
     chartType: string = 'line';
 
     chartDatasets: Array<any> = [
-        {data: [28, 48, 40, 19, 86, 27, 90], label: 'イェール数'}
+        { data: [28, 48, 40, 19, 86, 27, 90], label: 'イェール数' }
     ];
 
     chartLabels: Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
@@ -39,7 +39,7 @@ export class GraphsComponent implements OnInit {
         responsive: true
     };
 
-    constructor() {}
+    constructor() { }
 
     ngOnInit() {
     }

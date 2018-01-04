@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-import {GraphsComponent} from './graphs.component';
+import { GraphsComponent } from './graphs.component';
 
-import {GraphsRoutingModule} from './graphs-routing.module';
+import { GraphsRoutingModule } from './graphs-routing.module';
 
 @NgModule({
   imports: [
@@ -16,4 +16,4 @@ import {GraphsRoutingModule} from './graphs-routing.module';
     GraphsComponent,
   ]
 })
-export class GraphsModule {}
+export class GraphsModule { }

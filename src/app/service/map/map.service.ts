@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
-import {Location} from '../../model/location';
+import { Location } from '../../model/location';
 
 @Injectable()
 export class MapService {
 
-    constructor() {}
+    constructor() { }
 
     getCurrentLocation(): Observable<Location> {
         return Observable.create(observer => {
@@ -16,7 +16,7 @@ export class MapService {
 
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    return observer.next({lat: position.coords.latitude, lng: position.coords.longitude});
+                    return observer.next({ lat: position.coords.latitude, lng: position.coords.longitude });
                 },
                 (error) => {
                     return observer.error(error);

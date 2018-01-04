@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {MomentsComponent} from './moments.component';
+import { MomentsComponent } from './moments.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          {path: 'moments', component: MomentsComponent},
+          { path: 'moments', component: MomentsComponent },
         ]
       }
     ]
@@ -26,4 +26,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class MomentsRoutingModule {}
+export class MomentsRoutingModule { }
