@@ -47,7 +47,10 @@ export class UserSignupComponent implements OnInit {
   signup() {
     this.setAuthUser();
     this.auth.siginUp(this.authUser.email, this.authUser.password)
-      .then((x) => {
+      .then((err: string) => {
+        if (err) {
+          return;
+        }
         this.router.navigate([AppConsts.ROOT_ROUTE_URL.ROOT]);
       });
   }

@@ -28,27 +28,31 @@ export class AuthService {
             });
     }
 
-    siginUp(email: string, password: string) {
+    siginUp(email: string, password: string): Promise<User | string> {
         return this.auth.auth.createUserWithEmailAndPassword(email, password)
             .then(user => {
-                return console.log(user) || this.updateUserData(user);
+                return user;
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                return err.message;
+            });
     }
 
-    login(email: string, password: string): Promise<any> {
+    login(email: string, password: string): Promise<User | string> {
         return this.auth.auth.signInWithEmailAndPassword(email, password)
-            .then(user => {
-                return console.log(user) || this.updateUserData(user);
+            .then((user: User) => {
+                return user;
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                return err.message;
+            });
     }
 
     isLoggedIn(): boolean {
         return !!this.auth.auth.currentUser;
     }
 
-    googleLogin() {
+    googleLogin(): Promise<User | string> {
         const provider = new firebase.auth.GoogleAuthProvider();
         return this.oAuthLogin(provider);
     }
@@ -57,13 +61,18 @@ export class AuthService {
         return this.auth.auth.signOut();
     }
 
-    private oAuthLogin(provider) {
+    getLoginUser(): User {
+        return this.auth.auth.currentUser;
+    }
+
+    private oAuthLogin(provider): Promise<User | string> {
         return this.auth.auth.signInWithPopup(provider)
             .then(credential => {
-                console.log(credential.user);
-                return this.updateUserData(credential.user);
+                return credential;
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                return err.message;
+            });
     }
 
     private updateUserData(user: User): Promise<void> {

@@ -62,7 +62,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.setAuthUser();
     this.auth.login(this.authUser.email, this.authUser.password)
-      .then(() => {
+      .then((err: string) => {
+        if (err) {
+          return;
+        }
         this.router.navigate([AppConsts.ROOT_ROUTE_URL.ROOT]);
       });
   }
@@ -70,14 +73,20 @@ export class LoginComponent implements OnInit {
   googleLogin() {
     this.setAuthUser();
     this.auth.googleLogin()
-      .then(() => {
+      .then((err: string) => {
+        if (err) {
+          return;
+        }
         this.router.navigate([AppConsts.ROOT_ROUTE_URL.ROOT]);
       });
   }
 
   logout() {
     this.auth.logout()
-      .then(() => {
+      .then((err: string) => {
+        if (err) {
+          return;
+        }
         this.router.navigate([LoginConsts.ROUTE_URLS.LOGIN]);
       });
   }
