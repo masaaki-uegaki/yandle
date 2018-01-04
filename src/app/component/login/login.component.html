@@ -1,0 +1,33 @@
+<!-- <button class="btn btn-blue-grey waves-light" (click)="googleLogin()" mdbRippleRadius>Googleでログイン</button>
+<button class="btn btn-blue-grey waves-light" [routerLink]="['/signup']" mdbRippleRadius>新規登録</button>
+
+<form [formGroup]="loginForm" #formDir="ngForm" (ngSubmit)="login()">
+  <label for="email">メールアドレス</label>
+  <input type="email" class="input" formControlName="email">
+  <label for="password">パスワード</label>
+  <input type="password" class="input" formControlName="password">
+  <button type="submit" class="btn btn-blue-grey waves-light" mdbRippleRadius>ログイン</button>
+</form> -->
+
+
+
+<form [formGroup]="loginForm" #formDir="ngForm" (ngSubmit)="login()">
+    <div class="md-form form-group">
+        <i class="fa fa-envelope prefix active"></i>
+        <label class="active" for="email">メールアドレス</label>
+        <input id="email" type="email" class="form-control email" formControlName="email" placeholder="メールアドレス" i18n-placeholder mdbActive mdbInputValidate>
+    </div>
+    <div class="md-form form-group">
+        <i class="fa fa-lock prefix active"></i>
+        <label class="active" for="password">パスワード</label>
+        <input id="password" type="password" class="form-control password" formControlName="password" placeholder="パスワード" i18n-placeholder mdbActive mdbInputValidate>
+    </div>
+
+    <div class="row mb-3">
+      <button type="submit" class="btn btn-blue-grey waves-light" [disabled]="loginForm.invalid" mdbRippleRadius>ログイン</button>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn btn-blue-grey waves-light" (click)="googleLogin()" mdbRippleRadius>Googleでログイン</button>
+      <button type="submit" class="btn btn-blue-grey waves-light" [routerLink]="['/signup']" mdbRippleRadius>新規登録</button>
+    </div>
+</form>

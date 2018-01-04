@@ -1,6 +1,6 @@
-<global-navbar></global-navbar>
+<global-navbar *ngIf="isLoggedIn()"></global-navbar>
 
-<div class="container mt-3">
+<div class="container mt-3" *ngIf="isLoggedIn()">
     <yell></yell>
 </div>
 
