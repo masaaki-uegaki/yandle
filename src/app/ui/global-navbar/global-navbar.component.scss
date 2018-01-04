@@ -1,8 +1,10 @@
+$active-color: #bf545e;
+
 .nav-item > a[class*="active"] {
     .active {
         position: relative;
         padding-bottom: 3px;
-        border-bottom: inset 3px #bf545e;
+        border-bottom: inset 3px $active-color;
     }
 }
 
@@ -10,7 +12,7 @@
     .active {
         position: relative;
         bottom: 1px;
-        border-bottom: inset 3px lighten(#bf545e, 20%); 
+        border-bottom: inset 3px lighten($active-color, 20%); 
     }
 }
 
@@ -19,5 +21,5 @@
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-  background-color: #bf545e !important;
+    background-color: $active-color;
 }
