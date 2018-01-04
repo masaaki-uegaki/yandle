@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GlobalNavbarComponent } from './global-navbar.component';
+import {GlobalNavbarComponent} from './global-navbar.component';
 
 describe('NavbarComponent', () => {
   let component: GlobalNavbarComponent;
@@ -8,9 +8,9 @@ describe('NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GlobalNavbarComponent ]
+      declarations: [GlobalNavbarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

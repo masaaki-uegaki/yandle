@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { MessagesComponent } from './messages.component';
+import {MessagesComponent} from './messages.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'messages', component: MessagesComponent },
+          {path: 'messages', component: MessagesComponent},
         ]
       }
     ]

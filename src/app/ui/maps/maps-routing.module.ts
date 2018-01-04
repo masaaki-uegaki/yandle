@@ -1,7 +1,7 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { MapsComponent } from './maps.component';
+import {MapsComponent} from './maps.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'maps', component: MapsComponent },
+          {path: 'maps', component: MapsComponent},
         ]
       }
     ]

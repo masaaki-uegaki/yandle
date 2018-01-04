@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import * as moment from 'moment'; 
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import * as moment from 'moment';
 
-import { AngularFirestore } from 'angularfire2/firestore';
+import {AngularFirestore} from 'angularfire2/firestore';
 
-import { Yell } from '../../model/yell';
+import {Yell} from '../../model/yell';
 
 @Injectable()
 export class YellService {
-
-    constructor(private db: AngularFirestore) { }
+    constructor(private db: AngularFirestore) {
+    }
 
     getMoments(): Observable<Yell[]> {
         return this.db.collection<Yell>('yells', ref => ref.orderBy('createdAt', 'desc')).valueChanges();

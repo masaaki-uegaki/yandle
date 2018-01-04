@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'global-navbar',
   templateUrl: 'global-navbar.component.html',
-  styleUrls: [ 'global-navbar.component.scss' ]
+  styleUrls: ['global-navbar.component.scss']
 })
 
 export class GlobalNavbarComponent implements OnInit {

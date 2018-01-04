@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MapService } from '../../service/map/map.service';
-import { Location } from '../../model/location';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {MapService} from '../../service/map/map.service';
+import {Location} from '../../model/location';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'app-maps',
@@ -14,16 +14,16 @@ export class MapsComponent implements OnInit {
     zoom = 11;
 
     constructor(
-      private route: ActivatedRoute,
-      private mapService: MapService) {
-      }
+        private route: ActivatedRoute,
+        private mapService: MapService) {
+    }
 
     ngOnInit() {
-      this.setLocation();
+        this.setLocation();
     }
 
     setLocation() {
-        this.route.queryParams.subscribe((params)=> {
+        this.route.queryParams.subscribe((params) => {
             if (params.lat && params.lng) {
                 this.location = {lat: Number.parseFloat(params.lat), lng: Number.parseFloat(params.lng)};
             } else {

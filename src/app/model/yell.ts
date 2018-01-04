@@ -1,5 +1,5 @@
-import { Location } from './location';
-import { Moment } from 'moment';
+import {Location} from './location';
+import {Moment} from 'moment';
 
 export interface Yell {
     id: number;

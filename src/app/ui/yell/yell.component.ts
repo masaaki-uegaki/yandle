@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
 
-import { YellService } from '../../service/yell/yell.service';
-import { Yell } from '../../model/yell';
-import { MapService } from '../../service/map/map.service';
-import { Location } from '../../model/location';
+import {YellService} from '../../service/yell/yell.service';
+import {Yell} from '../../model/yell';
+import {MapService} from '../../service/map/map.service';
+import {Location} from '../../model/location';
 
-import * as moment from 'moment'; 
-import { Observable } from 'rxjs/Observable';
+import * as moment from 'moment';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'yell',
     templateUrl: 'yell.component.html',
-    styleUrls: [ 'yell.component.scss' ]
+    styleUrls: ['yell.component.scss']
 })
 
 export class YellComponent implements OnInit {
@@ -41,7 +41,7 @@ export class YellComponent implements OnInit {
 
     onSubmit() {
         this.setYell()
-            .subscribe(() => 
+            .subscribe(() =>
                 this.yellService.addYell(this.yell)
             );
         this.yellForm.reset();
@@ -69,8 +69,8 @@ export class YellComponent implements OnInit {
     setCurrentLocation() {
         this.mapService.getCurrentLocation()
             .subscribe(
-                (location: Location) => this.yell.location = location,
-            );
+            (location: Location) => this.yell.location = location,
+        );
     }
 
     //TODO
