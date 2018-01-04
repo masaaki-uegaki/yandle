@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
-// 以下追加したもの
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
 import { User } from '../../model/user';
+
+const API_URL_USERS = 'users';
 
 @Injectable()
 export class AuthService {
@@ -21,7 +21,7 @@ export class AuthService {
         this.user = this.auth.authState
             .switchMap(user => {
                 if (user) {
-                    return this.db.doc<User>(`users/${user.uid}`).valueChanges();
+                    return this.db.doc<User>(`${API_URL_USERS}/${user.uid}`).valueChanges();
                 } else {
                     return Observable.of(null);
                 }
@@ -67,7 +67,7 @@ export class AuthService {
     }
 
     private updateUserData(user: User): Promise<void> {
-        const docUser: AngularFirestoreDocument<User> = this.db.doc(`users/${user.uid}`);
+        const docUser: AngularFirestoreDocument<User> = this.db.doc(`${API_URL_USERS}/${user.uid}`);
         const data: User = {
             uid: user.uid,
             email: user.email,
