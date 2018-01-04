@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthUser } from '../../model/auth-user'
+import { User } from '../../model/user'
 import { AuthService } from '../../shared/auth/auth.service';
 import { AppConsts } from '../../app.constants';
 import { LoginConsts } from './login.constants';
@@ -62,8 +63,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.setAuthUser();
     this.auth.login(this.authUser.email, this.authUser.password)
-      .then((err: string) => {
-        if (err) {
+      .then((err: string | User) => {
+        if (typeof err === 'string') {
           return;
         }
         this.router.navigate([AppConsts.ROOT_ROUTE_URL.ROOT]);
@@ -73,8 +74,8 @@ export class LoginComponent implements OnInit {
   googleLogin() {
     this.setAuthUser();
     this.auth.googleLogin()
-      .then((err: string) => {
-        if (err) {
+      .then((err: string | User) => {
+        if (typeof err === 'string') {
           return;
         }
         this.router.navigate([AppConsts.ROOT_ROUTE_URL.ROOT]);
@@ -83,11 +84,15 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.auth.logout()
-      .then((err: string) => {
-        if (err) {
+      .then((err: string | User) => {
+        if (typeof err === 'string') {
           return;
         }
         this.router.navigate([LoginConsts.ROUTE_URLS.LOGIN]);
       });
+  }
+
+  isLoggedIn(): boolean {
+    return this.auth.isLoggedIn();
   }
 }

@@ -13,7 +13,7 @@ export class AppComponent {
     private auth: AuthService,
   ) { }
 
-  public isLoggedIn(): boolean {
+  isLoggedIn(): boolean {
     return this.auth.isLoggedIn();
   }
 }
