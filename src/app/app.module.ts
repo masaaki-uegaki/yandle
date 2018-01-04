@@ -20,7 +20,7 @@ import { YellModule } from './ui/yell/yell.module';
 import { ProfileModule } from './ui/profile/profile.module';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AgmCoreModule } from '@agm/core';
@@ -41,7 +41,7 @@ registerLocaleData(localeJa);
     YellModule,
     ProfileModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AngularFireAuthModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     MDBBootstrapModule.forRoot(),

@@ -7,6 +7,7 @@ import { MapService } from '../../service/map/map.service';
 import { Location } from '../../model/location';
 
 import * as moment from 'moment'; 
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'yell',
@@ -39,18 +40,30 @@ export class YellComponent implements OnInit {
     }
 
     onSubmit() {
-        this.setYell();
-        this.yellService.addYell(this.yell);
+        this.setYell()
+            .subscribe(() => 
+                this.yellService.addYell(this.yell)
+            );
         this.yellForm.reset();
     }
 
-    setYell() {
-        this.setYellMock();
+    setYell(): Observable<any> {
+        return Observable.create(ovserver => {
+            this.setYellMock();
+            this.yell.message = this.message.value;
+            this.yell.createdAt = this.timestamp;
 
-        this.yell.message = this.message.value;
-        this.yell.createdAt = this.timestamp;
-
-        this.setCurrentLocation();
+            if (this.yell.location) {
+                this.setCurrentLocation();
+                return ovserver.next();
+            } else {
+                this.mapService.getCurrentLocation()
+                    .subscribe((location: Location) => {
+                        this.yell.location = location;
+                        return ovserver.next();
+                    });
+            }
+        })
     }
 
     setCurrentLocation() {
