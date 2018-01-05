@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { GraphsConsts } from './graphs.constants'
 import { GraphsComponent } from './graphs.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'messages', component: GraphsComponent },
+          { path: GraphsConsts.CHILD_ROUTES.GRAPHS, component: GraphsComponent },
         ]
       }
     ]
