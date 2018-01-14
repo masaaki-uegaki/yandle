@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Angulartics2Module } from 'angulartics2';
 
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
@@ -14,7 +15,8 @@ import { ProfileModule } from '../profile/profile.module';
     GlobalNavbarModule,
     YellModule,
     ProfileModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    Angulartics2Module,
   ],
   declarations: [
     HomeComponent,

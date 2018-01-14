@@ -30,6 +30,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AgmCoreModule } from '@agm/core';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './component/login/auth/auth.guard';
 
@@ -58,7 +61,8 @@ registerLocaleData(localeJa);
     MDBBootstrapModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCjzPouajQEKc2cuM0DZoTIbElhpe6mQ-I'
-    })
+    }),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],

@@ -76,6 +76,7 @@ export class YellComponent implements OnInit {
 
     //TODO
     setYellMock() {
+
         this.yell.id = 0;
         this.yell.uid = 'anonymous';
         this.yell.userName = '匿名さん';

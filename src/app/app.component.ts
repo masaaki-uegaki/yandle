@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './shared/auth/auth.service';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
 
   constructor(
     private auth: AuthService,
+    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
   ) { }
 
   isLoggedIn(): boolean {

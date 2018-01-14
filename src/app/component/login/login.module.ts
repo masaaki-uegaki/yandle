@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Angulartics2Module } from 'angulartics2';
 
 import { LoginComponent } from './login.component';
 
@@ -10,7 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Angulartics2Module,
   ],
   declarations: [
     LoginComponent,

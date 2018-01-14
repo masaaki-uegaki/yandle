@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppConsts } from '../../app.constants';
+import { MessagesConsts } from './messages.constants';
 import { MessagesComponent } from './messages.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: AppConsts.ROOT_ROUTES.MESSAGES, component: MessagesComponent },
+          { path: MessagesConsts.CHILD_ROUTES.MESSAGES, component: MessagesComponent },
         ]
       }
     ]
