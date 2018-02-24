@@ -10,7 +10,7 @@ import * as moment from 'moment';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    selector: 'yell',
+    selector: 'app-yell',
     templateUrl: 'yell.component.html',
     styleUrls: ['yell.component.scss']
 })
@@ -64,7 +64,7 @@ export class YellComponent implements OnInit {
                         return ovserver.next();
                     });
             }
-        })
+        });
     }
 
     setCurrentLocation() {
@@ -74,7 +74,7 @@ export class YellComponent implements OnInit {
         );
     }
 
-    //TODO
+    // TODO
     setYellMock() {
 
         this.yell.id = 0;

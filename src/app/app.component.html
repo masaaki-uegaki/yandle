@@ -1,7 +1,7 @@
-<global-navbar *ngIf="isLoggedIn()"></global-navbar>
+<app-global-navbar *ngIf="isLoggedIn()"></app-global-navbar>
 
 <div class="container mt-3" *ngIf="isLoggedIn()">
-    <yell></yell>
+    <app-yell></app-yell>
 </div>
 
 <div class="container-fruid router-outlet">

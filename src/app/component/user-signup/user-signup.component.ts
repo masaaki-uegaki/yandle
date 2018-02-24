@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AppConsts } from '../../app.constants'
-import { AuthUser } from '../../model/auth-user'
-import { AuthService } from '../../shared/auth/auth.service'
+import { AppConsts } from '../../app.constants';
+import { AuthUser } from '../../model/auth-user';
+import { AuthService } from '../../shared/auth/auth.service';
 
 @Component({
-  selector: 'user-signup',
+  selector: 'app-user-signup',
   templateUrl: 'user-signup.component.html',
   styleUrls: ['user-signup.component.scss']
 })
