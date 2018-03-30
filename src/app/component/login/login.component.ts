@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 // 以下追加したもの
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthUser } from '../../../typings.d';
-import { User } from '../../../typings.d';
 import { AuthService } from '../../shared/auth/auth.service';
 import { AppConsts } from '../../app.constants';
 import { LoginConsts } from './login.constants';
@@ -15,7 +13,7 @@ import { LoginConsts } from './login.constants';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  authUser: AuthUser = {
+  authUser: IAuthUser = {
     email: '',
     password: '',
   };
@@ -63,7 +61,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.setAuthUser();
     this.auth.login(this.authUser.email, this.authUser.password)
-      .then((err: string | User) => {
+      .then((err: string | IUser) => {
         if (typeof err === 'string') {
           return;
         }
@@ -74,7 +72,7 @@ export class LoginComponent implements OnInit {
   googleLogin() {
     this.setAuthUser();
     this.auth.googleLogin()
-      .then((err: string | User) => {
+      .then((err: string | IUser) => {
         if (typeof err === 'string') {
           return;
         }
@@ -84,7 +82,7 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.auth.logout()
-      .then((err: string | User) => {
+      .then((err: string | IUser) => {
         if (typeof err === 'string') {
           return;
         }

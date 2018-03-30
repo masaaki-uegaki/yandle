@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Location } from '../../../typings.d';
-
 @Injectable()
 export class MapService {
 
     constructor() { }
 
-    getCurrentLocation(): Observable<Location> {
+    getCurrentLocation(): Observable<ILocation> {
         return Observable.create(observer => {
             if (!navigator.geolocation) {
                 return observer.error();

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
-import { Yell } from '../../../typings.d';
-import { Location } from '../../../typings.d';
 import { YellService } from '../../shared/yell/yell.service';
 import { MapService } from '../../shared/map/map.service';
 
@@ -16,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class YellComponent implements OnInit {
-    yell: Yell = {
+    yell: IYell = {
         id: 0,
         uid: '',
         userName: '',
@@ -59,7 +57,7 @@ export class YellComponent implements OnInit {
                 return ovserver.next();
             } else {
                 this.mapService.getCurrentLocation()
-                    .subscribe((location: Location) => {
+                    .subscribe((location: ILocation) => {
                         this.yell.location = location;
                         return ovserver.next();
                     });
@@ -70,7 +68,7 @@ export class YellComponent implements OnInit {
     setCurrentLocation() {
         this.mapService.getCurrentLocation()
             .subscribe(
-            (location: Location) => this.yell.location = location,
+            (location: ILocation) => this.yell.location = location,
         );
     }
 

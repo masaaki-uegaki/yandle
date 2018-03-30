@@ -5,13 +5,12 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
-import { User } from '../../../typings.d';
 
 const API_URL_USERS = 'users';
 
 @Injectable()
 export class AuthService {
-    user: Observable<User | null>;
+    user: Observable<IUser | null>;
 
     constructor(
         private router: Router,
@@ -21,14 +20,14 @@ export class AuthService {
         this.user = this.auth.authState
             .switchMap(user => {
                 if (user) {
-                    return this.db.doc<User>(`${API_URL_USERS}/${user.uid}`).valueChanges();
+                    return this.db.doc<IUser>(`${API_URL_USERS}/${user.uid}`).valueChanges();
                 } else {
                     return Observable.of(null);
                 }
             });
     }
 
-    siginUp(email: string, password: string): Promise<User | string> {
+    siginUp(email: string, password: string): Promise<IUser | string> {
         return this.auth.auth.createUserWithEmailAndPassword(email, password)
             .then(user => {
                 return user;
@@ -38,9 +37,9 @@ export class AuthService {
             });
     }
 
-    login(email: string, password: string): Promise<User | string> {
+    login(email: string, password: string): Promise<IUser | string> {
         return this.auth.auth.signInWithEmailAndPassword(email, password)
-            .then((user: User) => {
+            .then((user: IUser) => {
                 return user;
             })
             .catch(err => {
@@ -52,7 +51,7 @@ export class AuthService {
         return !!this.auth.auth.currentUser;
     }
 
-    googleLogin(): Promise<User | string> {
+    googleLogin(): Promise<IUser | string> {
         const provider = new firebase.auth.GoogleAuthProvider();
         return this.oAuthLogin(provider);
     }
@@ -61,11 +60,11 @@ export class AuthService {
         return this.auth.auth.signOut();
     }
 
-    getLoginUser(): User {
+    getLoginUser(): IUser {
         return this.auth.auth.currentUser;
     }
 
-    oAuthLogin(provider): Promise<User | string> {
+    oAuthLogin(provider): Promise<IUser | string> {
         return this.auth.auth.signInWithPopup(provider)
             .then(credential => {
                 return credential;
@@ -75,9 +74,9 @@ export class AuthService {
             });
     }
 
-    updateUserData(user: User): Promise<void> {
-        const docUser: AngularFirestoreDocument<User> = this.db.doc(`${API_URL_USERS}/${user.uid}`);
-        const data: User = {
+    updateUserData(user: IUser): Promise<void> {
+        const docUser: AngularFirestoreDocument<IUser> = this.db.doc(`${API_URL_USERS}/${user.uid}`);
+        const data: IUser = {
             uid: user.uid,
             email: user.email,
             displayName: user.displayName || '',
