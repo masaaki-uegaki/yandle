@@ -5,7 +5,7 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
-import { User } from '../../model/user';
+import { User } from '../../../typings.d';
 
 const API_URL_USERS = 'users';
 
@@ -65,7 +65,7 @@ export class AuthService {
         return this.auth.auth.currentUser;
     }
 
-    private oAuthLogin(provider): Promise<User | string> {
+    oAuthLogin(provider): Promise<User | string> {
         return this.auth.auth.signInWithPopup(provider)
             .then(credential => {
                 return credential;
@@ -75,7 +75,7 @@ export class AuthService {
             });
     }
 
-    private updateUserData(user: User): Promise<void> {
+    updateUserData(user: User): Promise<void> {
         const docUser: AngularFirestoreDocument<User> = this.db.doc(`${API_URL_USERS}/${user.uid}`);
         const data: User = {
             uid: user.uid,

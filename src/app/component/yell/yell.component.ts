@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
-import { Yell } from '../../model/yell';
-import { Location } from '../../model/location';
+import { Yell } from '../../../typings.d';
+import { Location } from '../../../typings.d';
 import { YellService } from '../../shared/yell/yell.service';
 import { MapService } from '../../shared/map/map.service';
 
@@ -76,7 +76,6 @@ export class YellComponent implements OnInit {
 
     // TODO
     setYellMock() {
-
         this.yell.id = 0;
         this.yell.uid = 'anonymous';
         this.yell.userName = '匿名さん';

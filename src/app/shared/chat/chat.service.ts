@@ -4,7 +4,7 @@ import * as moment from 'moment';
 
 import { AngularFirestore } from 'angularfire2/firestore';
 
-import { Chat } from '../../model/chat';
+import { Chat } from '../../../typings.d';
 
 @Injectable()
 export class ChatService {
@@ -16,7 +16,7 @@ export class ChatService {
     }
 
     addMessage(chat: Chat) {
-        chat.createdAt = moment(chat.createdAt).format('YYYY-MM-DD HH:mm:ss')
+        chat.createdAt = moment(chat.createdAt).format('YYYY-MM-DD HH:mm:ss');
         this.db.collection<Chat>('/chat').add(chat);
     }
 }

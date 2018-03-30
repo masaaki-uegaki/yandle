@@ -3,7 +3,7 @@
         <div class="card-body">
             <a class="card-link" routerLink="/profile/{{yell.userId}}">{{yell.userName}}</a>
             <div class="yell-message card-text mt-1 mb-1">{{yell.message}}</div>
-            <a class="card-link" [routerLink]="['/maps']" [queryParams]="{lat: yell.location.lat, lng: yell.location.lng}"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
+            <!-- <a class="card-link" [routerLink]="['/maps']" [queryParams]="{lat: yell.location.lat, lng: yell.location.lng}"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a> -->
 
             <button type="button" class="btn btn-primary relative waves-light" (click)="fluid.show()" mdbRippleRadius><i class="fa fa-comments" aria-hidden="true"></i></button>
             <div class="card-text">{{yell.createdAt | timestamp}}</div>
@@ -13,7 +13,7 @@
 
 <div mdbModal #fluid="mdb-modal" class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-full-height modal-right" role="document">
-        <div class="modal-content">
+        <div class="modal-content">11
             <div class="modal-header">
                 <h4 class="modal-title w-100" id="myModalLabel" i18n>チャット</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="fluid.hide()">
@@ -21,6 +21,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                
                 <ul class="list-group z-depth-0">
                     <li class="list-group-item justify-content-between">
                         Cras justo odio
@@ -49,7 +50,7 @@
                 </ul>
             </div>
             <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="fluid.hide()" mdbRippleRadius>Close</button>
+                <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="fluid.hide()" mdbRippleRadius>閉じる</button>
                 <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>Save changes</button>
             </div>
         </div>

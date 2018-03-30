@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Location } from '../../model/location';
+import { Location } from '../../../typings.d';
 
 @Injectable()
 export class MapService {

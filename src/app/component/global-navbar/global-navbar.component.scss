@@ -1,19 +1,19 @@
 $active-color: #bf545e;
 
-.nav-item > a[class*="active"] {
-    .active {
-        position: relative;
-        padding-bottom: 3px;
-        border-bottom: inset 3px $active-color;
-    }
-}
+// .nav-item > a {
+//     // .active {
+//         position: relative;
+//         padding-bottom: 3px;
+//         border-bottom: inset 3px $active-color;
+//     // }
+// }
 
-.nav-item > a:hover {
-    .active {
+a:hover {
+    // .active {
         position: relative;
         bottom: 1px;
         border-bottom: inset 3px lighten($active-color, 20%); 
-    }
+    // }
 }
 
 .avator:after {

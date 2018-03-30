@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapService } from '../../shared/map/map.service';
-import { Location } from '../../model/location';
+import { Location } from '../../../typings.d';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

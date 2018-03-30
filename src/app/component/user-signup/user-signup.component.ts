@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppConsts } from '../../app.constants';
-import { AuthUser } from '../../model/auth-user';
+import { AuthUser } from '../../../typings.d';
 import { AuthService } from '../../shared/auth/auth.service';
 
 @Component({

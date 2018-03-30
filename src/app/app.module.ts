@@ -14,8 +14,6 @@ import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
 
-import { UiModule } from './component/ui.module';
-
 import { LoginModule } from './component/login/login.module';
 import { UserSignupModule } from './component/user-signup/user-signup.module';
 
@@ -47,7 +45,6 @@ registerLocaleData(localeJa);
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    UiModule,
     LoginModule,
     UserSignupModule,
     HomeModule,

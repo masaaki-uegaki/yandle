@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 // 以下追加したもの
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthUser } from '../../model/auth-user'
-import { User } from '../../model/user'
+import { AuthUser } from '../../../typings.d';
+import { User } from '../../../typings.d';
 import { AuthService } from '../../shared/auth/auth.service';
 import { AppConsts } from '../../app.constants';
 import { LoginConsts } from './login.constants';
