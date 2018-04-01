@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { map, take, tap } from 'rxjs/operators';
 import { AuthService } from '../../../shared/auth/auth.service';
-import { LoginConsts } from '../login.constants'
+import { LoginConsts } from '../login.constants';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

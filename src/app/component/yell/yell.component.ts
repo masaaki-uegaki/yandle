@@ -32,7 +32,7 @@ export class YellComponent implements OnInit {
 
     ngOnInit() {
         this.yellForm = this.fb.group({
-            'message': [this.yell.message, [Validators.required]]
+            'message': ['', [Validators.required, Validators.email]]
         });
 
         this.setCurrentLocation();

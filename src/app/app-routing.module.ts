@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './component/login/auth/auth.guard';
 import { AppConsts } from './app.constants';
-import { LoginComponent } from './component/login/login.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
@@ -20,6 +19,9 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  declarations: [
+    PageNotFoundComponent,
+  ]
 })
 export class AppRoutingModule { }
